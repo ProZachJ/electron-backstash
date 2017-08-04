@@ -1,42 +1,42 @@
-'use strict';
-const electron = require('electron');
+'use strict'
+const electron = require('electron')
 
-const app = electron.app;
+const app = electron.app
 
 // Adds debug features like hotkeys for triggering dev tools and reload
-require('electron-debug')();
+require('electron-debug')()
 
 // Prevent window being garbage collected
-let mainWindow;
+let mainWindow
 
-function onClosed() {
-	// Dereference the window
-	// For multiple windows store them in an array
-	mainWindow = null;
+function onClosed () {
+  // Dereference the window
+  // For multiple windows store them in an array
+  mainWindow = null
 }
 
-function createMainWindow() {
-	const win = new electron.BrowserWindow({
-		width: 600,
-		height: 400
-	});
+function createMainWindow () {
+  const win = new electron.BrowserWindow({
+    width: 600,
+    height: 400
+  })
 
-	win.loadURL(`file://${__dirname}/index.html`);
-	win.on('closed', onClosed);
+  win.loadURL(`file://${__dirname}/index.html`)
+  win.on('closed', onClosed)
 
-	return win;
+  return win
 }
 
 app.on('window-all-closed', () => {
-	app.quit();
-});
+  app.quit()
+})
 
 app.on('activate', () => {
-	if (!mainWindow) {
-		mainWindow = createMainWindow();
-	}
-});
+  if (!mainWindow) {
+    mainWindow = createMainWindow()
+  }
+})
 
 app.on('ready', () => {
-	mainWindow = createMainWindow();
-});
+  mainWindow = createMainWindow()
+})
