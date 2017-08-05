@@ -1,7 +1,7 @@
 {
   "name": "app",
-  "productName": "electron-backbone-boilerplate",
-  "version": "0.0.0",
+  "productName": "electron-backstash",
+  "version": "0.0.1",
   "description": "A skeleton for an electron app using backbonejs & mustachejs",
   "license": "MIT",
   "repository": "user/repo",
