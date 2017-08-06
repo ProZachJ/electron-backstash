@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 		<title>Hello Electron Backstash</title>
 		<link rel="stylesheet" href="css/photon.css">
-		
+    <link rel="import" href="views/sidebar.html">
+    <link rel="import" href="views/hello.html">
 	</head>
 	<body>
     <div class="window">
@@ -12,39 +13,7 @@
       <div class="window-content">
         <div class="pane-group">
           <div class="pane pane-sm sidebar">
-            <nav class="nav-group">
-              <h5 class="nav-group-title">Favorites</h5>
-              <span class="nav-group-item">
-                <span class="icon icon-home"></span>
-                connors
-              </span>
-              <span class="nav-group-item active">
-                <span class="icon icon-light-up"></span>
-                Photon
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-download"></span>
-                Downloads
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-folder"></span>
-                Documents
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-window"></span>
-                Applications
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-signal"></span>
-                AirDrop
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-monitor"></span>
-                Desktop
-              </span>
-            </nav>
-          </div>
-
+          </div>  
           <div class="pane">
             <div class="container">
             </div>
@@ -52,6 +21,8 @@
         </div>
       </div>
     </div>
-		<script data-main="js/script" src="app.js"></script>
+    <script>
+      require('./app.js')()
+    </script>
 	</body>
 </html>

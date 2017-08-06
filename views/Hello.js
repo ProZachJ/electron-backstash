@@ -2,13 +2,14 @@
 const Backbone = require('backbone')
 const Mustache = require('mustache')
 const fs = require('fs')
+const path = require('path')
 
 module.exports = Backbone.View.extend({
   events: {
     'click #greet': 'greet'
   },
   initialize: function () {
-    this.template = fs.readFileSync('templates/hello.html', {encoding: 'utf8'})
+    this.template = fs.readFileSync(path.join(__dirname, 'hello.html'), {encoding: 'utf8'})
     this.render()
   },
   render: function () {
